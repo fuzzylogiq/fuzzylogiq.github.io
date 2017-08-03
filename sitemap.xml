@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://fuzzylogiq.github.io/first-post/</loc>
+    <loc>https://fuzzylogiq.github.io/first-post/</loc>
     <lastmod>2017-08-03T16:17:13+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://fuzzylogiq.github.io/categories/</loc>
+    <loc>https://fuzzylogiq.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://fuzzylogiq.github.io/tags/</loc>
+    <loc>https://fuzzylogiq.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://fuzzylogiq.github.io/</loc>
+    <loc>https://fuzzylogiq.github.io/</loc>
     <lastmod>2017-08-03T16:17:13+01:00</lastmod>
     <priority>0</priority>
   </url>
