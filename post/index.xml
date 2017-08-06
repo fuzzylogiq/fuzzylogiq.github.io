@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>First Post</title>
-      <link>https://fuzzylogiq.github.io/post/first-post/</link>
+      <title>Problems with disabling the sync of Desktop and Documents to iCloud</title>
+      <link>https://fuzzylogiq.github.io/post/icloud-desktop-and-documents/</link>
       <pubDate>Thu, 03 Aug 2017 16:17:13 +0100</pubDate>
       
-      <guid>https://fuzzylogiq.github.io/post/first-post/</guid>
-      <description>This is the first post</description>
+      <guid>https://fuzzylogiq.github.io/post/icloud-desktop-and-documents/</guid>
+      <description>In 10.12 Apple introduced the ability for users to sync their Documents and Desktop folder with iCloud so that they would be the same on any computer they were using. In 10.12.4 they gave us the ability to disable it (Rich Trouton has a very informative blog post on how to do so here. You might think that setting the preference (allowCloudDesktopAndDocuments=false in com.apple.applicationaccess) means you&amp;rsquo;d be safe from users hiving off all their local data from those folders to the cloud.</description>
     </item>
     
   </channel>
