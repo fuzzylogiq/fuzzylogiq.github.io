@@ -6,10 +6,19 @@
     <description>Recent content on fuzzylogiq&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 03 Aug 2017 16:17:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Aug 2017 16:51:19 +0100</lastBuildDate>
     
 	<atom:link href="https://fuzzylogiq.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Doing a Test</title>
+      <link>https://fuzzylogiq.github.io/post/doing-a-test/</link>
+      <pubDate>Wed, 23 Aug 2017 16:51:19 +0100</pubDate>
+      
+      <guid>https://fuzzylogiq.github.io/post/doing-a-test/</guid>
+      <description>Doing a test</description>
+    </item>
     
     <item>
       <title>Problems with disabling the sync of Desktop and Documents to iCloud</title>
