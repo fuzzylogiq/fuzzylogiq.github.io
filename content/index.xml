@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fuzzylogiq&#39;s blog</title>
-    <link>https://fuzzylogiq.github.io/</link>
-    <description>Recent content on fuzzylogiq&#39;s blog</description>
+    <title>Contents on fuzzylogiq&#39;s blog</title>
+    <link>https://fuzzylogiq.github.io/content/</link>
+    <description>Recent content in Contents on fuzzylogiq&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Wed, 13 Dec 2017 14:23:44 +0000</lastBuildDate>
     
-	<atom:link href="https://fuzzylogiq.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fuzzylogiq.github.io/content/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://fuzzylogiq.github.io/content/post/rogue-amoeba-echelon-installs/</guid>
       <description>We recently had a request from a user to package the Piezo app so they could easily record Skype conversations and other computer audio. The user had been running the app from their home folder but then needed admin creds in order to install InstantOn - which is Rogue Amoeba&amp;rsquo;s audio driver that can instantly start recording audio from apps without restarting them. The app shows the dialog to install the driver under Install Extras&amp;hellip; in the Piezo menu, and also if the user tries to record from an app whose audio stream it can&amp;rsquo;t immediately connect to.</description>
-    </item>
-    
-    <item>
-      <title>Problems with disabling the sync of Desktop and Documents to iCloud</title>
-      <link>https://fuzzylogiq.github.io/post/icloud-desktop-and-documents/</link>
-      <pubDate>Thu, 03 Aug 2017 16:17:13 +0100</pubDate>
-      
-      <guid>https://fuzzylogiq.github.io/post/icloud-desktop-and-documents/</guid>
-      <description>In 10.12 Apple introduced the ability for users to sync their Documents and Desktop folder with iCloud so that they would be the same on any computer they were using. In 10.12.4 they gave us the ability to disable it (Rich Trouton has a very informative blog post on how to do so here.) You might think that setting the preference (allowCloudDesktopAndDocuments=false in com.apple.applicationaccess) means you&amp;rsquo;d be safe from users hiving off all their local data from those folders to the cloud.</description>
     </item>
     
   </channel>
