@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fuzzylogiq.github.io/content/post/rogue-amoeba-echelon-installs/</loc>
+    <loc>https://fuzzylogiq.github.io/post/rogue-amoeba-echelon-installs/</loc>
     <lastmod>2017-12-13T14:23:44+00:00</lastmod>
   </url>
   
@@ -18,14 +18,8 @@
   </url>
   
   <url>
-    <loc>https://fuzzylogiq.github.io/content/</loc>
-    <lastmod>2017-12-13T14:23:44+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzzylogiq.github.io/post/</loc>
-    <lastmod>2017-08-03T16:17:13+01:00</lastmod>
+    <lastmod>2017-12-13T14:23:44+00:00</lastmod>
     <priority>0</priority>
   </url>
   

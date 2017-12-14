@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fuzzylogiq&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 03 Aug 2017 16:17:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 13 Dec 2017 14:23:44 +0000</lastBuildDate>
     
 	<atom:link href="https://fuzzylogiq.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rogue Amoeba InstantOn Driver Installs</title>
+      <link>https://fuzzylogiq.github.io/post/rogue-amoeba-echelon-installs/</link>
+      <pubDate>Wed, 13 Dec 2017 14:23:44 +0000</pubDate>
+      
+      <guid>https://fuzzylogiq.github.io/post/rogue-amoeba-echelon-installs/</guid>
+      <description>We recently had a request from a user to package the Piezo app so they could easily record Skype conversations and other computer audio. The user had been running the app from their home folder but then needed admin creds in order to install InstantOn - which is Rogue Amoeba&amp;rsquo;s audio driver that can instantly start recording audio from apps without restarting them. The app shows the dialog to install the driver under Install Extras&amp;hellip; in the Piezo menu, and also if the user tries to record from an app whose audio stream it can&amp;rsquo;t immediately connect to.</description>
+    </item>
     
     <item>
       <title>Problems with disabling the sync of Desktop and Documents to iCloud</title>
