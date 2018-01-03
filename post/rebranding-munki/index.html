@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.26" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ben Goodstein">
+    <meta property="og:url" content="https://fuzzylogiq.github.io/post/rebranding-munki/">
+
+    <title>Rebranding Munki - fuzzylogiq&#39;s blog</title>
+    <meta property="og:title" content="Rebranding Munki - fuzzylogiq&#39;s blog">
+    <meta property="og:type" content="article">
+    <meta name="description" content="">
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-111236653-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/journal.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="fuzzylogiq&#39;s blog">
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav class="site-nav">
+        <a href="https://fuzzylogiq.github.io/">Index</a>
+      </nav>
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Rebranding Munki"/>
+<meta name="twitter:description" content="Background In this post I&rsquo;m going to detail how you can rebrand the Managed Software Center application that is the main end-user interface for munki, Walt Disney Animation Studios&rsquo; frankly amazing tool for software package management on macOS.
+So why would you want to rebrand Managed Software Center? Well, for us, we already had a strong branding for our Apple endpoint management service, and we wanted to be able to use that consistently in our management tools so that users saw a familiar logo and name, aiding adoption and trust."/>
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Rebranding Munki</h1>
+      <time class="post-date" datetime="2017-12-21 13:56:10 UTC">21 Dec 2017</time>
+    </header>
+
+    
+
+<h4 id="background">Background</h4>
+
+<p>In this post I&rsquo;m going to detail how you can rebrand the <a href="https://github.com/munki/munki/wiki/Managed-Software-Center-Introduction">Managed Software Center</a> application that is the main end-user interface for <a href="https://github.com/munki/munki">munki</a>, Walt Disney Animation Studios&rsquo; frankly amazing tool for software package management on macOS.</p>
+
+<p><img src="/img/Orchard_Software_Centre_app.png" alt="Orchard's rebranded Managed Software Center" /></p>
+
+<p>So why would you want to rebrand <a href="https://github.com/munki/munki/wiki/Managed-Software-Center-Introduction">Managed Software Center</a>? Well, for us, we already had a strong branding for our Apple endpoint management service, and we wanted to be able to use that consistently in our management tools so that users saw a familiar logo and name, aiding adoption and trust. Note we&rsquo;re not talking about any custom banners here (those are all handled through <a href="https://github.com/munki/munki/wiki/Client-Customization">munki&rsquo;s Client Customization</a>) we&rsquo;re talking about the .app&rsquo;s icon and it&rsquo;s name in the Finder.</p>
+
+<p><img src="/img/Orchard_Software_Centre_dock.png" alt="Orchard Software Center's icon in the Dock" /></p>
+
+<p>When we first looked into this for University of Oxford&rsquo;s <em><a href="https://docs.orchard.ox.ac.uk">Orchard</a></em> Apple endpoint management service we found <a href="https://groups.google.com/forum/#!msg/munki-dev/WQScNPxpEhA/2b8GCuLQQrMJ">this</a> discussion on munki-dev from 2014, leading to this <a href="https://gist.github.com/bochoven/c1c656e0c2e1b1078dfd">gist</a> by Arjen van Bochoven which appeared to do what we wanted - it git cloned munki, changed the icon and the Finder name for the .app, and could add a postinstall script. The only thing it didn&rsquo;t do that we needed was change the Finder name in our language of choice (UK English). So we wrote some code to further rebrand the localisations and put it up on <a href="https://github.com/ox-it">our organization on Github</a>.</p>
+
+<p>After some user feedback it was rewritten to take command-line options to make it easier to use. Then a chance remark by Greg Neagle himself led me to wonder why we were always building Managed Software Center with Xcode when in fact we could just use localizations to make the changes we wanted, if we could unpack the package and repack it successfully.  So now that&rsquo;s exactly what the latest version of the code does - it uses macOS&rsquo;s built-in packaging tools to modify a pre-built munkitools mpkg.</p>
+
+<p>What follows is a beginner&rsquo;s guide to using munki-rebrand to bring your own name and icon to Managed Software Center.</p>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<ul>
+<li>You&rsquo;ll need a Mac running [mac]OS[ X] 10.11 or higher</li>
+<li>You&rsquo;ll need to be somewhat familiar with the CLI (Terminal)</li>
+<li>You&rsquo;ll need to grab the latest version of the munki-rebrand code. You can either:
+
+<ul>
+<li>Download a zip/tgz of the <a href="https://github.com/ox-it/munki-rebrand/releases/latest">latest release from Github</a> and uncompress it somewhere suitable, or</li>
+<li>Use command line <code>git</code> or some other GUI method (shiver) to clone the repo e.g. <code>git clone https://github.com/ox-it/munki-rebrand.git</code></li>
+</ul></li>
+<li>If you want to change Managed Software Center&rsquo;s icon, you&rsquo;ll need an icns file or a 1024x1024 transparent png with your graphics. Creating the icon is somewhat out of scope of this document, but there are some useful tips <a href="here">!!FIXME!!</a></li>
+</ul>
+
+<h4 id="method">Method</h4>
+
+<h5 id="change-app-name">Change app name</h5>
+
+<ul>
+<li>First change directory to wherever the <code>munki_rebrand.py</code> script is on your computer e.g. <code>cd ~/Developer/munki-rebrand/</code></li>
+<li>The simplest type of rebranding is just changing the name of the app, which you can do with the <code>--appname</code> or <code>-a</code> (for short) options. For instance if you wanted to change the name of Managed Software Center in the Finder to <em>Awesome Software Hub</em> you&rsquo;d use: <br> <code>sudo ./munki_rebrand.py --appname &quot;Awesome Software Hub&quot;</code><br>(Note that it&rsquo;s important to enclose your app name in quotes if it has any spaces in it.)
+
+<ul>
+<li><code>munki_rebrand.py</code> should then download the latest release of <code>munkitools-X.X.XXXX.mpkg</code> from Github, unpack it, make your changes to the app name in all localizations, then repack it and you&rsquo;ll be left with the munkitools mpkg in the current working directory.</li>
+</ul></li>
+</ul>
+
+
+  </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'fuzzylogiq-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="https://fuzzylogiq.github.io/">
+          <span itemprop="name">Ben Goodstein</span>
+
+          ,
+          <span itemprop="jobTitle">Technical Leader (Apple)</span> at
+          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href="https://ox.ac.uk"><span itemprop="name">University of Oxford</span></a></span><br>
+
+          <a itemprop="sameAs" href="https://github.com/fuzzylogiq" title="GitHub">GH</a>
+
+          <a itemprop="sameAs" href="https://twitter.com/fuzzylogiq" title="Twitter">TW</a>
+
+          
+        </span>
+
+        
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+
